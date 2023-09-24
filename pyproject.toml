@@ -1,0 +1,51 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "hyperlight"
+homepage = "https://github.com/anonresearcher8/hyperlight"
+documentation = "https://github.com/anonresearcher8/hyperlight"
+version = "0.0.5"
+description = "Hyperlight is a Pytorch hypernetwork framework with a streamlined API"
+authors = ["AnonResearcher8 <anonresearcher8@example.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+classifiers=[
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'License :: OSI Approved :: Apache Software License',
+]
+
+keywords = ["hyperlight", "pytorch", "hypernetworks", "deep learning"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+torch = ">=1.10,<3"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6"
+bumpver = "^2021.11.17"
+isort = "^5.9.3"
+pytest = "^7.0.0"
+pyright = "^1.2.0"
+pre-commit = "^2.17.0"
+
+[tool.isort]
+profile = "black"
+
+[tool.bumpver]
+current_version = "0.0.5"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message  = "Bump version {old_version} -> {new_version}"
+commit          = true
+tag             = true
+push            = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"hyperlight/__init__.py" = ["{version}"]
